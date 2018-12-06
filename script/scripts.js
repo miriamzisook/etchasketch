@@ -26,9 +26,18 @@ function etchasketch(data){
 
                 //on event 
                 $("#contents").on("click", function(){
+
+                    console.log("clicked!")
                     var index = getRndInteger(0, etchasketchData.length);
-                    $("contents").html((etchasketchData[index]);    
-                })
+
+                    var delay = 2000; 
+
+                    $('#contents').fadeOut(delay, function() {
+                        $("#contents").html(etchasketchData[index].messageBody);
+                        $('#contents').fadeIn(delay);
+                    });
+
+                });
 
                 //function for what etch a sketch should do so it can happen on click or on shake
                 var index = getRndInteger(0, etchasketchData.length);
