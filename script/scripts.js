@@ -15,6 +15,7 @@ var formatTimeofDay = d3.timeFormat("%I:%M %p");
 
 
 function etchasketch(data){
+                console.log("updated: potato")
                 var etchasketchData = [];
 
                 for (i in allMessagesSorted){
