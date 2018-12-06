@@ -39,17 +39,53 @@
 		#contents {
 			font-family: 'etch', monospace; 
 			font-size: 2em;
-		
+			position: absolute;
+			top:10vw;
+			left:33vw;
+			width: 32vw;
+			height: 21vw;
+			/*background-color: white;*/
+			border-radius: 1vw; 
+			padding: 1vw;
+			overflow: hidden;
 		}
 
-		
+		#etchasketch:hover {
+			animation: shake 0.5s; 
+		}
+
+		#etchasketch:active {
+			animation: shake 0.5s; 
+		}
+
+
+
 
 		
+		@keyframes shake {
+		    0% { transform: translate(1px, 1px) rotate(0deg); }
+		    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+		    20% { transform: translate(-3px, 0px) rotate(1deg); }
+		    30% { transform: translate(3px, 2px) rotate(0deg); }
+		    40% { transform: translate(1px, -1px) rotate(1deg); }
+		    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+		    60% { transform: translate(-3px, 1px) rotate(0deg); }
+		    70% { transform: translate(3px, 1px) rotate(-1deg); }
+		    80% { transform: translate(-1px, -1px) rotate(1deg); }
+		    90% { transform: translate(1px, 2px) rotate(0deg); }
+		    100% { transform: translate(1px, -2px) rotate(-1deg); }
+		}
 
 	</style>
 
 </head>
-<body>
-			<div id='contents'>shake to see a new message from mom...</div>		
+<body>	
+
+		<div id='shakeButton'></div>
+		<div id='etchasketch'>
+			<img src="etchasketch.jpg" width=100%>
+			<div id='contents'>👋 mouse over the etch a sketch to shake, mouse off for a new message</div>
+		</div>
+		
 </body>
 </html>
