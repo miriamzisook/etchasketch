@@ -24,18 +24,15 @@ function etchasketch(data){
                     }
                 }
 
-                $("#etchasketch").mouseenter(function(){
-                    $("#contents").hide(); 
+                //on event 
+                $("#contents").on("click", function(){
+                    var index = getRndInteger(0, etchasketchData.length);
+                    $("contents").html((etchasketchData[index]);    
                 })
 
-                $("#etchasketch").mouseout(function(){
-                    //console.log("shaking!")
-                     var index = getRndInteger(0, etchasketchData.length);
-                     $("#contents").show()
-                     $("#contents").html(etchasketchData[index].messageBody)
-                     //console.log(etchasketchData[index])
-                    // var message = data[index].message;
-                })
+                //function for what etch a sketch should do so it can happen on click or on shake
+                var index = getRndInteger(0, etchasketchData.length);
+                  
 
                 function getRndInteger(min, max) {
                     return Math.floor(Math.random() * (max - min) ) + min;
