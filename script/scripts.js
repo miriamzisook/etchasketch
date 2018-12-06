@@ -16,22 +16,14 @@ var formatTimeofDay = d3.timeFormat("%I:%M %p");
 
 function etchasketch(data){
                 //info about the shake library here: https://github.com/alexgibson/shake.js/
-                var Shake = require('shake.js');
                 var myShakeEvent = new Shake({
                 threshold: 15, // optional shake strength threshold
                 timeout: 1000 // optional, determines the frequency of event generation
                 });
-
                 myShakeEvent.start();
-
                 window.addEventListener('shake', shakeEventDidOccur, false);
-
                 //function to call when shake occurs
-                function shakeEventDidOccur () {
-
-                    //put your own code here etc.
-                    alert('shake!');
-                }
+                
 
                 var etchasketchData = [];
 
@@ -42,6 +34,18 @@ function etchasketch(data){
                     }
                 }
 
+                function shakeEventDidOccur () {
+                    //put your own code here etc.
+                    var index = getRndInteger(0, etchasketchData.length);
+
+                    var delay = 2000; 
+
+                    $('#contents').fadeOut(delay, function() {
+                        $("#contents").html(etchasketchData[index].messageBody);
+                        $('#contents').fadeIn(delay);
+                    });
+                }
+                
                 //on event 
                 $("#contents").on("click", function(){
 
